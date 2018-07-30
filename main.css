@@ -63,7 +63,6 @@ h2 {
   border: none;
   width: 90px;
   height: 36px;
-  background-color: #009688;
   color: white;
   font-family: 'Courgette', cursive;
   font-size: 1.5rem;
@@ -78,5 +77,13 @@ h2 {
   cursor: pointer;
   box-shadow: 0 5px 5px rgba(0,0,0, .24);
   opacity: .8;
+}
+
+.button--green {
+  background-color: #009688;
+}
+
+.button--red {
+  background-color: #B92D00;
 }
 
