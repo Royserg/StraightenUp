@@ -4,15 +4,15 @@ const counter = document.querySelector('.timer__count');
 const startBtn = document.querySelector('#timerStart');
 
 // Extension icon is clicked - lookup if timer running
-chrome.storage.sync.get(['timer'], (result) => {
-  if (result.timer) {
+chrome.storage.sync.get(['timer'], (data) => {
+  if (data.timer) {
     // Change button to Stop
     startBtn.innerHTML = 'Stop';
     startBtn.classList.remove('button--green');
     startBtn.classList.add('button--red');
     startBtn.onclick = stopTimer;
 
-    counter.innerHTML = result.timer;
+    counter.innerHTML = data.timer;
 
     increaseBtn.style.display = 'none';
     decreaseBtn.style.display = 'none';
