@@ -1,6 +1,15 @@
 var timerID;
 const timerInterval = 1000 * 60 // 1 minute in miliseconds
 
+// When Browser Opened run interval
+chrome.storage.sync.get(['timer'], function(data) {
+  if (data.timer) {
+    runTimer(data.timer);
+  }
+})
+
+
+
 function runTimer(time) {
   let intervalTime = timerInterval * time;
   // Notification Options
