@@ -17,7 +17,7 @@ function runTimer(time) {
     type: "image",
     title: "Straighten Up Your Back",
     message: "Fix you posture!",
-    iconUrl: "assets/icon_128.png",
+    iconUrl: "assets/icon48.png",
     imageUrl: "assets/notification_img.png"
   }
 
