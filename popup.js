@@ -45,6 +45,16 @@ function startTimer(time) {
     console.log('Set value in the storage')
   });
 
+  // inform user that timer started
+  const options = {
+    type: "basic",
+    title: "StraightenUp your back",
+    message: "Reminder timer started",
+    iconUrl: "assets/icon48.png",
+  }
+  chrome.notifications.create(options);
+
+  // close popup window
   window.close();
 }
 
