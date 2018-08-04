@@ -34,32 +34,31 @@ function updateCounter(value) {
 }
 
 function startTimer(time) {
-  // send time and start timer in the background;
+  // send time of timer to the background;
   let msg = {
     txt: 'start',
     time: Number(time)
   }
   chrome.runtime.sendMessage(msg);
 
-  chrome.storage.sync.set({timer: Number(time)}, () => {
-    console.log('Set value in the storage')
-  });
+  chrome.storage.sync.set({timer: Number(time)}, () => {});
 
   // inform user that timer started
-  const options = {
+  const notifOptions = {
     type: "basic",
     title: "StraightenUp your back",
     message: "Reminder timer started",
     iconUrl: "assets/icon48.png",
   }
-  chrome.notifications.create(options);
 
-  // close popup window
-  window.close();
+  chrome.notifications.create(notifOptions, function closePopup() {
+    // close popup window
+    window.close();
+  });
 }
 
 function stopTimer() {
-  // Change button back and add arrows and txt
+  // Change button, add arrows and txt
   startBtn.innerHTML = 'Start';
   startBtn.classList.remove('button--red');
   startBtn.classList.add('button--green');
